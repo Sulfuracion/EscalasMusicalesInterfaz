@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.escalas.HelloController">
+   <children>
+      <Label layoutX="84.0" layoutY="60.0" text="Nota musical" />
+      <Label layoutX="84.0" layoutY="100.0" text="Alteraciones" />
+      <Label layoutX="84.0" layoutY="141.0" text="Octava" />
+      <Slider fx:id="notaSlider" blockIncrement="1.0" layoutX="226.0" layoutY="62.0" majorTickUnit="1.0" max="7.0" min="1.0" minorTickCount="0" onMouseReleased="#seleccionar" prefHeight="14.0" prefWidth="232.0" showTickLabels="true" snapToTicks="true" value="1.0" />
+      <RadioButton fx:id="bemolBoton" layoutX="226.0" layoutY="100.0" mnemonicParsing="false" onAction="#seleccionar" text="Bemol">
+         <toggleGroup>
+            <ToggleGroup fx:id="AlteracionesGrupo" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="nomalBoton" layoutX="300.0" layoutY="100.0" mnemonicParsing="false" onAction="#seleccionar" selected="true" text="Normal" toggleGroup="$AlteracionesGrupo" />
+      <RadioButton fx:id="sostenidoBoton" layoutX="375.0" layoutY="100.0" mnemonicParsing="false" onAction="#seleccionar" text="Sostenido" toggleGroup="$AlteracionesGrupo" />
+      <Spinner fx:id="OctavaSeleccion" layoutX="226.0" layoutY="137.0" onDragDetected="#seleccionar" onMouseClicked="#seleccionar" />
+      <TextField fx:id="mostrar" layoutX="135.0" layoutY="236.0" prefHeight="87.0" prefWidth="327.0" />
+   </children>
+</Pane>
